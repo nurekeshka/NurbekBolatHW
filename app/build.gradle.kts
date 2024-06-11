@@ -11,6 +11,7 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation(libs.guava)
+    implementation("com.google.inject:guice:5.1.0")
 }
 
 testing {
