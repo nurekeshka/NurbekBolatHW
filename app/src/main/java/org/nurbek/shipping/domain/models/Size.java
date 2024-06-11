@@ -1,20 +1,46 @@
 package org.nurbek.shipping.domain.models;
 
-public interface Size {
-    public double getVolume();
+public class Size {
+    private double height;
+    private double width;
+    private double length;
 
-    public double getLength();
+    public Size(double height, double width, double length) {
+        this.height = height;
+        this.width = width;
+        this.length = length;
+    }
 
-    public void setLength(double value);
+    public double getVolume() {
+        return this.height * this.length * this.width;
+    }
 
-    public double getHeight();
+    public double getHeight() {
+        return height;
+    }
 
-    public void setHeight(double value);
+    public void setHeight(double value) {
+        this.height = value;
+    }
 
-    public double getWidth();
+    public double getWidth() {
+        return width;
+    }
 
-    public void setWidth(double value);
+    public void setWidth(double value) {
+        this.width = value;
+    }
 
-    public String toString();
+    public double getLength() {
+        return length;
+    }
+
+    public void setLength(double value) {
+        this.length = value;
+    }
+
+    public String toString() {
+        return this.length + " x " + this.width + " x " + this.height;
+    }
 
 }

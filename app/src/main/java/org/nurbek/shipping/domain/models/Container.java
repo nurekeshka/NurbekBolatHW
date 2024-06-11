@@ -1,14 +1,27 @@
 package org.nurbek.shipping.domain.models;
 
-public interface Container {
-    public double getPrice();
+public class Container {
+    private Size size;
+    private double price;
 
-    public void setPrice(double price);
+    public Container(Size size, double price) {
+        this.size = size;
+        this.price = price;
+    }
 
-    public Size getSize();
+    public double getPrice() {
+        return price;
+    }
 
-    public void setSize(Size size);
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-    public String toString();
+    public Size getSize() {
+        return size;
+    }
 
+    public void setSize(Size size) {
+        this.size = size;
+    }
 }

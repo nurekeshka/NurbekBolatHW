@@ -1,20 +1,45 @@
 package org.nurbek.shipping.domain.models;
 
-public interface Item {
-    public double getVolume();
+public class Item {
+    private String name;
+    private Size size;
+    private double weight;
 
-    public String getName();
+    public Item(String name, Size size, double weight) {
+        this.name = name;
+        this.size = size;
+        this.weight = weight;
+    }
 
-    public void setName(String name);
+    public double getVolume() {
+        return this.size.getVolume();
+    }
 
-    public Size getSize();
+    public String getName() {
+        return name;
+    }
 
-    public void setSize(Size size);
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public double getWeight();
+    public Size getSize() {
+        return size;
+    }
 
-    public void setWeight(double weight);
+    public void setSize(Size size) {
+        this.size = size;
+    }
 
-    public String toString();
+    public double getWeight() {
+        return weight;
+    }
 
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public String toString() {
+        return this.name;
+    }
 }
