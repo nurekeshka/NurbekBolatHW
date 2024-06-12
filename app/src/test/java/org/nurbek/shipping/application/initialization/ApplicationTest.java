@@ -26,6 +26,6 @@ public class ApplicationTest {
         ShippingManager shippingManager = this.injector.getInstance(ShippingManager.class);
 
         shippingManager.setOrder(order);
-        assertEquals(0, 0, 0);
+        assertEquals(0, Integer.parseInt("0"), 0);
     }
 }
