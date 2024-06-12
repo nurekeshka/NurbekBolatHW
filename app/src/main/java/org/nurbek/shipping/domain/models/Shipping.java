@@ -4,8 +4,8 @@ public class Shipping {
     private int largeContainersNumber;
     private int smallContainersNumber;
 
-    public Shipping(int bigContainersNumber, int smallContainersNumber) {
-        this.largeContainersNumber = bigContainersNumber;
+    public Shipping(int largeContainersNumber, int smallContainersNumber) {
+        this.largeContainersNumber = largeContainersNumber;
         this.smallContainersNumber = smallContainersNumber;
     }
 
