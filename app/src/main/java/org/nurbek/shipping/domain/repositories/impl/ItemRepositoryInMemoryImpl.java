@@ -11,12 +11,13 @@ import org.nurbek.shipping.domain.repositories.SizeRepository;
 import com.google.inject.Inject;
 
 public class ItemRepositoryInMemoryImpl implements ItemRepository {
-    @Inject
-    private SizeRepository sizeRepository;
-
+    private final SizeRepository sizeRepository;
     private final EnumMap<ItemEnum, Item> items;
 
-    public ItemRepositoryInMemoryImpl() {
+    @Inject
+    public ItemRepositoryInMemoryImpl(SizeRepository sizeRepository) {
+        this.sizeRepository = sizeRepository;
+
         this.items = new EnumMap<>(ItemEnum.class);
 
         this.items.put(ItemEnum.LAPTOP, new Item("Laptop", this.sizeRepository.getSize(SizeEnum.LAPTOP_ITEM), 6.5));

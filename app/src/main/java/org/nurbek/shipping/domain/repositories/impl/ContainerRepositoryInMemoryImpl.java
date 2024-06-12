@@ -11,12 +11,13 @@ import org.nurbek.shipping.domain.repositories.SizeRepository;
 import com.google.inject.Inject;
 
 public class ContainerRepositoryInMemoryImpl implements ContainerRepository {
-    @Inject
-    private SizeRepository sizeRepository;
-
+    private final SizeRepository sizeRepository;
     private final EnumMap<ContainerType, Container> containers;
 
-    public ContainerRepositoryInMemoryImpl() {
+    @Inject
+    public ContainerRepositoryInMemoryImpl(SizeRepository sizeRepository) {
+        this.sizeRepository = sizeRepository;
+
         this.containers = new EnumMap<>(ContainerType.class);
 
         this.containers.put(ContainerType.SMALL,
