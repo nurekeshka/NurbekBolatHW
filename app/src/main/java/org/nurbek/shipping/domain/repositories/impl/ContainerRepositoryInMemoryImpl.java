@@ -8,16 +8,21 @@ import org.nurbek.shipping.domain.models.Container;
 import org.nurbek.shipping.domain.repositories.ContainerRepository;
 import org.nurbek.shipping.domain.repositories.SizeRepository;
 
+import com.google.inject.Inject;
+
 public class ContainerRepositoryInMemoryImpl implements ContainerRepository {
+    @Inject
+    private SizeRepository sizeRepository;
+
     private final EnumMap<ContainerType, Container> containers;
 
     public ContainerRepositoryInMemoryImpl() {
-        SizeRepository sizeRepository = new SizeRepositoryInMemoryImpl();
-
         this.containers = new EnumMap<>(ContainerType.class);
 
-        this.containers.put(ContainerType.SMALL, new Container(sizeRepository.getSize(SizeEnum.SMALL_CONTAINER), 1200));
-        this.containers.put(ContainerType.LARGE, new Container(sizeRepository.getSize(SizeEnum.LARGE_CONTAINER), 1800));
+        this.containers.put(ContainerType.SMALL,
+                new Container(this.sizeRepository.getSize(SizeEnum.SMALL_CONTAINER), 1200));
+        this.containers.put(ContainerType.LARGE,
+                new Container(this.sizeRepository.getSize(SizeEnum.LARGE_CONTAINER), 1800));
     }
 
     public Container getContainer(ContainerType type) {
