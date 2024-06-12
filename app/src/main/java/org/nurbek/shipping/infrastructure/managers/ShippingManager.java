@@ -1,9 +1,10 @@
 package org.nurbek.shipping.infrastructure.managers;
 
 import org.nurbek.shipping.domain.models.Order;
+import org.nurbek.shipping.domain.models.Shipping;
 
 public interface ShippingManager {
-    public void bestShipping();
+    public Shipping bestShipping();
 
     public double totalVolume();
 

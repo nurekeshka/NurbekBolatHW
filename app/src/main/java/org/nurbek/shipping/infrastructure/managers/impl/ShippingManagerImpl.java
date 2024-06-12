@@ -7,7 +7,7 @@ public class ShippingManagerImpl implements ShippingManager {
     private Order order;
 
     @Override
-    public void bestShipping() {
+    public double bestShipping() {
         // Doing some crazy calculations
     }
 
