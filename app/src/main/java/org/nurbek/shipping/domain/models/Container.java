@@ -24,4 +24,8 @@ public class Container {
     public void setSize(Size size) {
         this.size = size;
     }
+
+    public double totalVolume() {
+        return this.size.getVolume();
+    }
 }
