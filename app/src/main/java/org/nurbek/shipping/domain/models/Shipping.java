@@ -1,15 +1,15 @@
 package org.nurbek.shipping.domain.models;
 
 public class Shipping {
-    private int largeContainersNumber;
-    private int smallContainersNumber;
+    private long largeContainersNumber;
+    private long smallContainersNumber;
 
-    public Shipping(int largeContainersNumber, int smallContainersNumber) {
+    public Shipping(long largeContainersNumber, long smallContainersNumber) {
         this.largeContainersNumber = largeContainersNumber;
         this.smallContainersNumber = smallContainersNumber;
     }
 
-    public int getLargeContainersNumber() {
+    public long getLargeContainersNumber() {
         return largeContainersNumber;
     }
 
@@ -17,7 +17,7 @@ public class Shipping {
         this.largeContainersNumber = bigContainersNumber;
     }
 
-    public int getSmallContainersNumber() {
+    public long getSmallContainersNumber() {
         return smallContainersNumber;
     }
 
