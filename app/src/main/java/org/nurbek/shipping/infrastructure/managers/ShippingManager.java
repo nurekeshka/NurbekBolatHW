@@ -6,6 +6,8 @@ import org.nurbek.shipping.domain.models.Shipping;
 public interface ShippingManager {
     public Shipping bestShipping();
 
+    public double shippingPrice(Shipping shipping);
+
     public double totalVolume();
 
     public double totalWeight();
