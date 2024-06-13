@@ -18,19 +18,28 @@ public class Injector {
             throw new IllegalArgumentException("No implementation registered for: " + type.getName());
         }
 
+        Constructor<?>[] constructors = clazz.getDeclaredConstructors();
+        T instance = null;
+
         try {
-            Constructor<?> constructor = clazz.getDeclaredConstructor();
-            Class<?>[] paramTypes = constructor.getParameterTypes();
+            for (Constructor<?> constructor : constructors) {
+                Class<?>[] paramTypes = constructor.getParameterTypes();
 
-            Object[] params = new Object[paramTypes.length];
+                Object[] params = new Object[paramTypes.length];
 
-            for (int i = 0; i < paramTypes.length; i++) {
-                params[i] = this.getInstance(paramTypes[i]);
+                for (int i = 0; i < paramTypes.length; i++) {
+                    params[i] = this.getInstance(paramTypes[i]);
+                }
+
+                instance = type.cast(constructor.newInstance(params));
             }
 
-            return type.cast(constructor.newInstance(params));
-        } catch (InstantiationException | IllegalAccessException | InvocationTargetException
-                | NoSuchMethodException e) {
+            if (instance == null) {
+                throw new InjectionException("None of the constructors match the Guice");
+            }
+
+            return instance;
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
             throw new InjectionException(e.toString() + " on the class : " + clazz.getName(), e);
         }
     }
