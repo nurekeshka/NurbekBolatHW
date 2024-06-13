@@ -6,6 +6,10 @@ import java.util.HashMap;
 public abstract class AbstractModule {
     public final Map<Class<?>, Class<?>> map = new HashMap<>();
 
+    protected AbstractModule() {
+        this.configure();
+    }
+
     public void configure() {
         // Should be overwritten
     }
