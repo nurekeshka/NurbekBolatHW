@@ -1,4 +1,4 @@
-package org.nurbek.shipping.refactoring.initialization;
+package org.nurbek.shipping.refactoring.application.initialization;
 
 import org.nurbek.shipping.domain.repositories.ContainerRepository;
 import org.nurbek.shipping.domain.repositories.ItemRepository;
