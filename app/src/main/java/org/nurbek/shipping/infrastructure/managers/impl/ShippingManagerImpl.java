@@ -6,14 +6,11 @@ import org.nurbek.shipping.domain.models.Shipping;
 import org.nurbek.shipping.domain.repositories.ContainerRepository;
 import org.nurbek.shipping.infrastructure.managers.ShippingManager;
 
-import com.google.inject.Inject;
-
 public class ShippingManagerImpl implements ShippingManager {
     private final ContainerRepository containerRepository;
 
     private Order order;
 
-    @Inject
     public ShippingManagerImpl(ContainerRepository containerRepository) {
         this.containerRepository = containerRepository;
     }

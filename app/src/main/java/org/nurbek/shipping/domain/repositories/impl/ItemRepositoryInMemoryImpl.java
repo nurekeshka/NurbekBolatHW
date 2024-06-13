@@ -8,13 +8,10 @@ import org.nurbek.shipping.domain.models.Item;
 import org.nurbek.shipping.domain.repositories.ItemRepository;
 import org.nurbek.shipping.domain.repositories.SizeRepository;
 
-import com.google.inject.Inject;
-
 public class ItemRepositoryInMemoryImpl implements ItemRepository {
     private final SizeRepository sizeRepository;
     private final EnumMap<ItemEnum, Item> items;
 
-    @Inject
     public ItemRepositoryInMemoryImpl(SizeRepository sizeRepository) {
         this.sizeRepository = sizeRepository;
 

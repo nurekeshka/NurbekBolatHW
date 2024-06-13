@@ -9,14 +9,14 @@ import org.nurbek.shipping.domain.repositories.impl.SizeRepositoryInMemoryImpl;
 import org.nurbek.shipping.infrastructure.managers.ShippingManager;
 import org.nurbek.shipping.infrastructure.managers.impl.ShippingManagerImpl;
 
-import com.google.inject.AbstractModule;
+import org.nurbek.inject.AbstractModule;
 
 public class BasicModule extends AbstractModule {
     @Override
-    protected void configure() {
-        bind(SizeRepository.class).to(SizeRepositoryInMemoryImpl.class);
-        bind(ContainerRepository.class).to(ContainerRepositoryInMemoryImpl.class);
-        bind(ItemRepository.class).to(ItemRepositoryInMemoryImpl.class);
-        bind(ShippingManager.class).to(ShippingManagerImpl.class);
+    public void configure() {
+        bind(SizeRepository.class, SizeRepositoryInMemoryImpl.class);
+        bind(ContainerRepository.class, ContainerRepositoryInMemoryImpl.class);
+        bind(ItemRepository.class, ItemRepositoryInMemoryImpl.class);
+        bind(ShippingManager.class, ShippingManagerImpl.class);
     }
 }
