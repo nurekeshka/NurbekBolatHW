@@ -4,12 +4,12 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import org.nurbek.inject.Guice;
+import org.nurbek.inject.Injector;
 import org.nurbek.shipping.application.initialization.BasicModule;
 import org.nurbek.shipping.domain.enums.ContainerType;
 import org.nurbek.shipping.domain.models.Container;
-
-import com.google.inject.Guice;
-import com.google.inject.Injector;
 
 public class ContainerRepositoryTest {
     private Injector injector;

@@ -3,8 +3,7 @@ package org.nurbek.shipping.application.initialization;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
-
-import com.google.inject.Guice;
+import org.nurbek.inject.Guice;
 
 public class BasicModuleTest {
     @Test

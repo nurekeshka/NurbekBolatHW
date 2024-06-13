@@ -2,13 +2,12 @@ package org.nurbek.shipping.mocks;
 
 import java.util.EnumMap;
 
+import org.nurbek.inject.Guice;
+import org.nurbek.inject.Injector;
 import org.nurbek.shipping.application.initialization.BasicModule;
 import org.nurbek.shipping.domain.enums.ItemEnum;
 import org.nurbek.shipping.domain.models.Order;
 import org.nurbek.shipping.domain.repositories.ItemRepository;
-
-import com.google.inject.Guice;
-import com.google.inject.Injector;
 
 public class MocksRepository {
     public static Order getOrder() {
