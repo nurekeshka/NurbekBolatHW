@@ -25,13 +25,13 @@ public class Injector {
             Object[] params = new Object[paramTypes.length];
 
             for (int i = 0; i < paramTypes.length; i++) {
-                params[i] = getInstance(paramTypes[i]);
+                params[i] = this.getInstance(paramTypes[i]);
             }
 
             return type.cast(constructor.newInstance(params));
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException
                 | NoSuchMethodException e) {
-            throw new InjectionException("Failed to create an instance of: " + clazz.getName(), e);
+            throw new InjectionException(e.toString() + " on the class : " + clazz.getName(), e);
         }
     }
 }
